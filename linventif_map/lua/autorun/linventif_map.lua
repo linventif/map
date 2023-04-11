@@ -18,6 +18,8 @@ local version = "0.1.0"
 LinvMap = {
     ["Config"] = {},
     ["Materials"] = {},
+    ["MapInfo"] = {},
+    ["MapMaterials"] = {},
     ["Info"] = {["name"] = name, ["version"] = version, ["folder"] = folder, ["license"] = license}
 }
 

@@ -25,7 +25,7 @@ LinvMap.Config.CopTeam = {
 }
 
 // Staff
-LinvMap.Config.StaffCanSeeAllOnDuty = true // If true, staff can see all players on duty
+LinvMap.Config.StaffCanSeeAll = true // If true, staff can see all players
 LinvMap.Config.StaffTeam = { // Staff team
     ["Staff"] = true,
     ["Staff on Duty"] = true,

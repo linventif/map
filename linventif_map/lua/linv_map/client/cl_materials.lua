@@ -5,8 +5,6 @@
 
 local imgurID = {
     ["no_map"] = "bANAhi8",
-    ["gm_mini_map"] = "ggtZgtZ",
-    ["rp_rockford_v2b"] = "02IMkDg",
     ["cursor"] = "dnna6rx",
     ["player_friends"] = "F1dqqCe",
     ["player_enemys"] = "YiBLkyT",
@@ -20,3 +18,12 @@ local imgurID = {
 // -- // -- // -- // -- // -- // -- // -- //
 
 LinvLib.CreateImgurMaterials(imgurID, LinvMap.Materials, "linventif/linvmap/material", "Linventif Map")
+
+hook.Add("InitPostEntity", "LinvMap:GetMapMaterials", function()
+    http.Fetch("https://api.linv.dev/addons/map/" .. game.GetMap() .. ".json", function(body, length, headers, code)
+        if code != 200 then return end
+        LinvMap.MapInfo = util.JSONToTable(body)
+        local imgurID = {["actual_map"] = LinvMap.MapInfo.info.imgur}
+        LinvLib.CreateImgurMaterials(imgurID, LinvMap.MapMaterials, "linventif/linvmap/map", "Linventif Map")
+    end)
+end)
