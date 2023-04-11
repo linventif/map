@@ -24,6 +24,11 @@ LinvMap.Config.CopTeam = {
     ["Police"] = true,
 }
 
+// Criminal (only staff)
+LinvMap.Config.CriminalTeam = {
+    ["Very Bad Guy"] = true
+}
+
 // Staff
 LinvMap.Config.StaffCanSeeAll = true // If true, staff can see all players
 LinvMap.Config.StaffTeam = { // Staff team
